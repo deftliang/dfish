@@ -1,14 +1,24 @@
 import React from 'react'
 // import Button, { ButtonType, ButtonSize } from './components/Button/button'
 // import Alert, {AlertType} from './components/Alert/alert'
-import Menu from './components/Menu/menu'
-import MenuItem from './components/Menu/menuItem'
-import SubMenu from './components/Menu/subMenu'
+// import Menu from './components/Menu/menu'
+// import MenuItem from './components/Menu/menuItem'
+// import SubMenu from './components/Menu/subMenu'
+import Tabs from './components/Tabs/tabs'
+import TabItem from './components/Tabs/tabItem'
 
 function App() {
   return (
     <div className="App">
-      <Menu
+      <Tabs mode='extrude'>
+        <TabItem label='class1'>tab A</TabItem>
+        <TabItem label='class2' disabled>tab B</TabItem>
+        <TabItem label='class3'>tab C</TabItem>
+        <TabItem label='class4'>tab D</TabItem>
+        <TabItem label='class5'>tab E</TabItem>
+      </Tabs>
+
+      {/* <Menu
         defaultIndex='0'
         onSelect={(index) => {
           alert(index)
@@ -23,7 +33,7 @@ function App() {
           <MenuItem>dropdown 2</MenuItem>
           <MenuItem>dropdown 3</MenuItem>
         </SubMenu>
-      </Menu>
+      </Menu> */}
 
       {/* <Button
         btnType={ButtonType.Danger}

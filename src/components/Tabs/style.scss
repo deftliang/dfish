@@ -1,0 +1,43 @@
+.df-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 15px;
+  list-style: none;
+  border-bottom: $menu-border-width solid $menu-border-color;
+  box-shadow: $menu-box-shadow;
+  >.tab-item {
+    padding: $menu-item-padding-y $menu-item-padding-x;
+    cursor: pointer;
+    transition: $menu-transition;
+    border: 2px solid #fff; 
+    &:hover, &:focus {
+      text-decoration: none;
+    }
+    &.is-disabled {
+      color: $menu-item-disabled-color;
+      pointer-events: none;
+      cursor: default;
+    }
+    &.is-active, &:hover {
+      color: $menu-item-active-color;
+    }
+  }
+}
+.tabs-dashed {
+  .tab-item {
+    &.is-active, &:hover {
+      // border-bottom: $menu-item-active-border-width solid $menu-item-active-color;
+    }
+  }
+}
+.tabs-extrude {
+  .tab-item {
+    &.is-active, &:hover {
+      border: 2px solid #eee;
+      border-bottom: 2px solid #fff;
+      border-radius: 3px;
+      box-shadow: 0 3px 0 0 #fff;
+    } 
+  }
+}
