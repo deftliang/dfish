@@ -1,15 +1,22 @@
 import React from 'react'
 // import Button, { ButtonType, ButtonSize } from './components/Button/button'
 // import Alert, {AlertType} from './components/Alert/alert'
-// import Menu from './components/Menu/menu'
-// import MenuItem from './components/Menu/menuItem'
-// import SubMenu from './components/Menu/subMenu'
+import Menu from './components/Menu/menu'
+import MenuItem from './components/Menu/menuItem'
+import SubMenu from './components/Menu/subMenu'
 import Tabs from './components/Tabs/tabs'
 import TabItem from './components/Tabs/tabItem'
+import Icon from './components/Icon/icon'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+
+library.add(fas)
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{padding: '20px'}}>
+      <Icon icon='arrow-down' theme='danger' size='10x'/>
+      <Icon icon='arrow-down' theme='primary' size='10x'/>
       <Tabs mode='extrude'>
         <TabItem label='class1'>tab A</TabItem>
         <TabItem label='class2' disabled>tab B</TabItem>
@@ -18,12 +25,12 @@ function App() {
         <TabItem label='class5'>tab E</TabItem>
       </Tabs>
 
-      {/* <Menu
+      <Menu
         defaultIndex='0'
         onSelect={(index) => {
           alert(index)
         }}
-        mode="vertical"
+        // mode="vertical"
         defaultOpenSubMenus={['2']}
       >
         <MenuItem>cool link 1</MenuItem>
@@ -33,7 +40,7 @@ function App() {
           <MenuItem>dropdown 2</MenuItem>
           <MenuItem>dropdown 3</MenuItem>
         </SubMenu>
-      </Menu> */}
+      </Menu>
 
       {/* <Button
         btnType={ButtonType.Danger}

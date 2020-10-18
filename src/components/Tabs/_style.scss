@@ -7,10 +7,17 @@
   border-bottom: $menu-border-width solid $menu-border-color;
   box-shadow: $menu-box-shadow;
   >.tab-item {
+    // position: relative;
+    // border: 2px solid transparent;
+    // border-bottom: none;
+    // bottom: -2px;
     padding: $menu-item-padding-y $menu-item-padding-x;
     cursor: pointer;
     transition: $menu-transition;
-    border: 2px solid #fff;
+    // 合并 border
+    &:nth-child(n+2) {
+      margin-left: -2px;
+    }
     &:hover, &:focus {
       text-decoration: none;
     }
@@ -33,11 +40,16 @@
 }
 .tabs-extrude {
   .tab-item {
+    position: relative;
+    border: 2px solid transparent;
+    border-bottom: none;
+    bottom: -2px;
     &.is-active, &:hover {
       border: 2px solid #eee;
-      border-bottom: 2px solid #fff;
-      border-radius: 3px;
-      box-shadow: 0 3px 0 0px #fff;
+      border-bottom: none;
+      background: #fff;
+      border-radius: 5px 5px 0 0;
+      box-shadow: 0 2px 0 0px #fff;
       z-index: 3;
     } 
   }
