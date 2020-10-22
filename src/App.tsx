@@ -6,6 +6,7 @@ import MenuItem from './components/Menu/menuItem'
 import SubMenu from './components/Menu/subMenu'
 import Tabs from './components/Tabs/tabs'
 import TabItem from './components/Tabs/tabItem'
+import Input from './components/Input/input'
 import Icon from './components/Icon/icon'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
@@ -14,19 +15,24 @@ library.add(fas)
 
 function App() {
   return (
-    <div className="App" style={{padding: '20px'}}>
-      <Icon icon='arrow-down' theme='danger' size='10x'/>
-      <Icon icon='arrow-down' theme='primary' size='10x'/>
-      <Tabs mode='extrude'>
-        <TabItem label='class1'>tab A</TabItem>
-        <TabItem label='class2' disabled>tab B</TabItem>
-        <TabItem label='class3'>tab C</TabItem>
-        <TabItem label='class4'>tab D</TabItem>
-        <TabItem label='class5'>tab E</TabItem>
+    <div className="App" style={{ padding: '20px' }}>
+      <Input prepend="https://" icon="arrow-right"/>
+      <hr />
+
+      <Icon icon="arrow-down" theme="danger" size="10x" />
+      <Icon icon="arrow-down" theme="primary" size="10x" />
+      <Tabs mode="extrude">
+        <TabItem label="class1">tab A</TabItem>
+        <TabItem label="class2" disabled>
+          tab B
+        </TabItem>
+        <TabItem label="class3">tab C</TabItem>
+        <TabItem label="class4">tab D</TabItem>
+        <TabItem label="class5">tab E</TabItem>
       </Tabs>
 
       <Menu
-        defaultIndex='0'
+        defaultIndex="0"
         onSelect={(index) => {
           alert(index)
         }}
