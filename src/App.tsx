@@ -1,22 +1,42 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 // import Button, { ButtonType, ButtonSize } from './components/Button/button'
 // import Alert, {AlertType} from './components/Alert/alert'
-import Menu from './components/Menu/menu'
-import MenuItem from './components/Menu/menuItem'
-import SubMenu from './components/Menu/subMenu'
-import Tabs from './components/Tabs/tabs'
-import TabItem from './components/Tabs/tabItem'
-import Input from './components/Input/input'
-import Icon from './components/Icon/icon'
+// import Menu from './components/Menu/menu'
+// import MenuItem from './components/Menu/menuItem'
+// import SubMenu from './components/Menu/subMenu'
+// import Tabs from './components/Tabs/tabs'
+// import TabItem from './components/Tabs/tabItem'
+// import Input from './components/Input/input'
+// import Icon from './components/Icon/icon'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
+import axios from 'axios'
+
 
 library.add(fas)
 
 function App() {
+  const [title, setTitle] = useState('')
+  useEffect(() => {
+    axios.get('https://jsonplaceholder.typicode.com/posts/1', {
+      headers: {
+        'X-Requested-With': 'XMLHttpRequest'
+      },
+      responseType: 'json'
+    })
+      .then(resp => {
+        console.log(resp) //df-log
+        setTitle(resp.data.title)
+      })
+  })
+
   return (
     <div className="App" style={{ padding: '20px' }}>
-      <Input prepend="https://" icon="arrow-right"/>
+
+      <h2>{title}</h2>
+
+
+      {/* <Input prepend="https://" icon="arrow-right"/>
       <hr />
 
       <Icon icon="arrow-down" theme="danger" size="10x" />
@@ -46,7 +66,7 @@ function App() {
           <MenuItem>dropdown 2</MenuItem>
           <MenuItem>dropdown 3</MenuItem>
         </SubMenu>
-      </Menu>
+      </Menu> */}
 
       {/* <Button
         btnType={ButtonType.Danger}
