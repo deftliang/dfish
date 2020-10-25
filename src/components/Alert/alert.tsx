@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import classNames from 'classnames'
+import Icon from '../Icon/icon'
 
-export enum AlertType {
-  Success = 'success',
-  Default = 'default',
-  Danger = 'danger',
-  Warning = 'warning'
-}
+// export enum AlertType {
+//   Success = 'success',
+//   Default = 'default',
+//   Danger = 'danger',
+//   Warning = 'warning'
+// }
+export type AlertType = 'success' | 'default' | 'danger' | 'warning'
 
 interface BaseAlertProps {
   className?: string
@@ -37,7 +39,7 @@ const Alert: React.FC<AlertProps> = (props) => {
     >
       {title ? <div><b>{title}</b></div> : ''}
       <div>{children}</div>
-      {closable ? <div className="close" onClick={() => {setShow(false)}}>x</div>: ''}
+      {closable ? <div className="close" onClick={() => {setShow(false)}}><Icon theme="light" icon="times"/></div>: ''}
     </div>
   ) : null
 }
@@ -45,7 +47,7 @@ const Alert: React.FC<AlertProps> = (props) => {
 Alert.defaultProps = {
   title: '提示',
   children: '新消息',
-  alertType: AlertType.Default
+  alertType: 'default'
 }
 
 export default Alert

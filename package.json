@@ -23,9 +23,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "clean": "rimraf ./build",
+    "build": "npm run clean && npm run build-ts && npm run build-css",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "build-ts": "tsc -p tsconfig.build.json",
+    "build-css": "node-sass ./src/styles/index.scss ./build/index.css",
     "sb": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "storybook-docs": "start-storybook --docs"
@@ -57,6 +60,7 @@
     "babel-loader": "^8.1.0",
     "classnames": "^2.2.6",
     "node-sass": "^4.14.1",
-    "react-is": "^16.13.1"
+    "react-is": "^16.13.1",
+    "rimraf": "^3.0.2"
   }
 }

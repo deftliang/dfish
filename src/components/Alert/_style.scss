@@ -7,7 +7,7 @@
   transform: translateX(-50%);
   min-width: 400px;
   min-height: 45px;
-  background-color:$blue;
+  background-color: $blue;
   border-radius: 10px;
   padding: 10px 30px;
   color: #fff;
@@ -24,23 +24,23 @@
     right: 15px;
     color: #fff;
     &:hover {
-      background-color: rgba(0,0,0,.3);
+      background-color: rgba(0, 0, 0, 0.3);
     }
   }
 }
 
 .alert-success {
-  @include alert-style($success)
+  @include alert-style($success);
 }
 
 .alert-danger {
-  @include alert-style($danger)
+  @include alert-style($danger);
 }
 
 .alert-warning {
-  @include alert-style($warning)
+  @include alert-style($warning);
 }
 
 .alert-default {
-  @include alert-style($primary)
+  @include alert-style($primary);
 }
