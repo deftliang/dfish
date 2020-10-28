@@ -1,10 +1,24 @@
 {
   "name": "dfish",
-  "version": "0.1.0",
-  "private": true,
-  "main": "build/index.js",
-  "module": "build/index.js",
-  "types": "build/index.d.ts",
+  "version": "0.1.2",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "author": "deftliang21",
+  "description": "React Component Library",
+  "keywords": [
+    "Component",
+    "UI",
+    "React"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/deftdiary/dfish"
+  },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
@@ -26,15 +40,16 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "clean": "rimraf ./build",
+    "clean": "rimraf ./dist",
     "build": "npm run clean && npm run build-ts && npm run build-css",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build-ts": "tsc -p tsconfig.build.json",
-    "build-css": "node-sass ./src/styles/index.scss ./build/index.css",
+    "build-css": "node-sass ./src/styles/index.scss ./dist/index.css",
     "sb": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "storybook-docs": "start-storybook --docs"
+    "storybook-docs": "start-storybook --docs",
+    "prepublish": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
