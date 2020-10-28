@@ -1,6 +1,6 @@
-import React, { useContext } from 'react'
+import React from 'react'
 // @ts-ignore
-import { render, RenderResult, fireEvent, cleanup, wait } from '@testing-library/react'
+import { render, RenderResult, fireEvent, cleanup } from '@testing-library/react'
 import Tabs, { TabsProps } from './tabs'
 import TabItem from './tabItem'
 
@@ -35,7 +35,7 @@ describe('test Tabs and TabItem component', () => {
     disabledElement = wrapper.getByText('disabled')
   })
   it('should render correct Tabs and TabItem based on default props', () => {
-    expect(tabsElement).toBeInTheDocument
+    expect(tabsElement).toBeInTheDocument()
     expect(tabsElement).toHaveClass('df-tabs test')
     expect(tabsElement.querySelectorAll(':scope > li').length).toEqual(5)
     expect(activeElement).toHaveClass('tab-item is-active')
