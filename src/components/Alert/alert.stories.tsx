@@ -10,17 +10,6 @@ export default {
 
 const Templete: Story<AlertProps> = (args) => <Alert {...args} />
 
-// export const AlertWithType = () => {
-//   return (
-//     <>
-//       <Alert alertType='default' closable />
-//       <Alert alertType='success' closable />
-//       <Alert alertType='danger'  closable/>
-//       <Alert alertType='warning' closable/>
-//     </>
-//   )
-// }
-
 export const defaultAlert = Templete.bind({})
 defaultAlert.args = {
   alertType: 'default',
