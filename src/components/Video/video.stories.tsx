@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/accessible-emoji */
 import React from 'react'
 import { Meta } from '@storybook/react/types-6-0'
 import Video from './video'
@@ -11,7 +12,7 @@ export default {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          minHeight: '100vh'
+          flexDirection: 'column'
         }}
       >
         <Story />
@@ -21,5 +22,10 @@ export default {
 } as Meta
 
 export const simpleVideo = () => {
-  return <Video poster='http://localhost:9001/50445980-88299a80-0912-11e9-962a-6fd92fd18027%E7%9A%84%E5%89%AF%E6%9C%AC.png' width={700} src="http://localhost:9001/imooc.mp4" />
+  return (
+    <>
+    <Video width={700} src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4" />
+    <p style={{marginTop: '20px'}}>Enjoy the movie 😎</p>
+    </>
+  )
 }

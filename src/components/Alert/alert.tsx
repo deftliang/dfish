@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import classNames from 'classnames'
 import Icon from '../Icon/icon'
+import Transition from '../Transition/transition'
 
 // export enum AlertType {
 //   Success = 'success',
@@ -32,16 +33,37 @@ const Alert: React.FC<AlertProps> = (props) => {
     [`alert-${alertType}`]: alertType
   })
 
-  return show ? (
-    <div
-      className={classes}
-      {...restProps}
+  return (
+    <Transition
+      // @ts-ignore
+      in={show}
+      animation="zoom-in-left"
+      timeout={300}
     >
-      {title ? <div><b>{title}</b></div> : ''}
-      <div>{children}</div>
-      {closable ? <div className="close" onClick={() => {setShow(false)}}><Icon theme="light" icon="times"/></div>: ''}
-    </div>
-  ) : null
+      <div className={classes} {...restProps}>
+        {title ? (
+          <div>
+            <b>{title}</b>
+          </div>
+        ) : (
+          ''
+        )}
+        <div>{children}</div>
+        {closable ? (
+          <div
+            className="close"
+            onClick={() => {
+              setShow(false)
+            }}
+          >
+            <Icon theme="light" icon="times" />
+          </div>
+        ) : (
+          ''
+        )}
+      </div>
+    </Transition>
+  )
 }
 
 Alert.defaultProps = {

@@ -9,6 +9,23 @@ import { action } from '@storybook/addon-actions'
 export default {
   title: 'Components/Menu',
   component: Menu,
+  argTypes: {
+    mode: {
+      defaultValue: { summary: 'horizantal' },
+      description: 'change the menu mode',
+      control: {
+        type: 'select',
+        options: ['horizantal', 'vertical']
+      },
+    },
+    defaultIndex: {
+      description: 'change the default selceted submenu',
+      defaultValue: { summary: '"0"' },
+    },
+    onSelect: {
+      description: 'bind onselect event',
+    }
+  }
 } as Meta
 
 const Templete: Story<MenuProps> = (args) => (

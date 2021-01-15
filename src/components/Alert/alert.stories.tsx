@@ -12,6 +12,15 @@ export default {
         type: 'select',
         options: ['success', 'default', 'danger', 'warning']
       }
+    },
+    title: {
+      description: 'change the alert title',
+      control: {
+        type: 'text',
+      }
+    },
+    children: {
+      description: 'change the alert content',
     }
   }
 } as Meta

@@ -1,15 +1,25 @@
 import React from 'react'
 import { Meta, Story } from '@storybook/react/types-6-0'
 import Tabs, { TabsProps } from './tabs'
-import { action } from '@storybook/addon-actions'
 import TabItem from './tabItem'
-// import { action } from '@storybook/addon-actions'
-
 
 export default {
   title: 'Components/Tabs',
   component: Tabs,
-  onSelect: action('chagne')
+  argTypes: {
+    mode: {
+      defaultValue: { summary: 'dashed' },
+      description: 'change the tabs mode',
+      control: {
+        type: 'select',
+        options: ['dashed', 'extrude']
+      }
+    },
+    defaultIndex: {
+      description: 'change the default tab',
+      defaultValue: { summary: '"0"' },
+    },
+  }
 } as Meta
 
 const Templete: Story<TabsProps> = (args) => (<Tabs {...args}>

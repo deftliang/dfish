@@ -6,7 +6,6 @@ import Button, { ButtonProps } from './button'
 export default {
   title: 'Components/Button',
   component: Button,
-  parameters: { actions: { argTypesRegex: '^on.*' } },
   argTypes: {
     children: {
       description: 'change the button content',

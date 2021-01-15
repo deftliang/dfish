@@ -1,34 +1,45 @@
 import React from 'react'
 import { Meta, Story } from '@storybook/react/types-6-0'
 import Input, { InputProps } from './input'
-import { action } from '@storybook/addon-actions'
-// import { action } from '@storybook/addon-actions'
-
 
 export default {
   title: 'Components/Input',
   component: Input,
-  onChagne: action('chagne'),
-  decorators:  [(Story) => <div style={{ margin: '3em' }}><Story/></div>]
+  argTypes: {
+    placeholder: {
+      description: 'placehodler'
+    },
+    size: {
+      defaultValue: { summary: 'ls' },
+      control: {
+        type: 'select',
+        options: ['ls', 'sm']
+      }
+    },
+    disabled: {
+      defaultValue: { summary: 'false' },
+    },
+    onChange: {
+      description: 'bind event onchange'
+    },
+    icon: {
+      type: null
+    },
+    prepend: {
+      type: null
+    },
+    append: {
+      type: null
+    }
+  }
 } as Meta
 
-const Templete: Story<InputProps> = (args) => <Input {...args} />
-
-// export const AlertWithType = () => {
-//   return (
-//     <>
-//       <Alert alertType='default' closable />
-//       <Alert alertType='success' closable />
-//       <Alert alertType='danger'  closable/>
-//       <Alert alertType='warning' closable/>
-//     </>
-//   )
-// }
+const Templete: Story<InputProps> = (args) => <div style={{ margin: '3em' }}><Input {...args} /></div>
 
 export const simpleInput = Templete.bind({})
 simpleInput.args = {
   placeholder: 'I am Input Component',
-  // onChange: (e) => {action('d')}
+  disabled: false
 }
 
 export const InputWithSize = () => {

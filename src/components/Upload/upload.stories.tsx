@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/accessible-emoji */
 import React from 'react'
 import { Meta } from '@storybook/react/types-6-0'
 import { action } from '@storybook/addon-actions'
@@ -35,23 +36,28 @@ export default {
 
 export const simpleUpload = () => {
   return (
-    <Upload
-      action="https://my-json-server.typicode.com/typicode/demo/posts"
-      onChange={action('change')}
-      // beforeUpload={filePromise}
-      // defaultFileList={defaultFileList}
-      name="deft-name"
-      headers={{ 'X-Prower-deft': 'hello' }}
-      accept=".jpg"
-      multiple
-      drag
-      // onSuccess={action('onSuccess')}
-      // onError={action('onError')}
-      // onProgress={action('onProgress')}
-    >
-      <Icon icon="upload" size="5x" theme="secondary" />
-      <br />
-      <p>Drag file over to upload</p>
-    </Upload>
+    <div>
+    <p>试一试上传文件 📁 查看上传效果</p>
+    <div style={{ margin: '3em' }}>
+      <Upload
+        action="https://my-json-server.typicode.com/typicode/demo/posts"
+        onChange={action('change')}
+        // beforeUpload={filePromise}
+        // defaultFileList={defaultFileList}
+        name="deft-name"
+        headers={{ 'X-Prower-deft': 'hello' }}
+        accept=".jpg"
+        multiple
+        drag
+        // onSuccess={action('onSuccess')}
+        // onError={action('onError')}
+        // onProgress={action('onProgress')}
+      >
+        <Icon icon="upload" size="5x" theme="secondary" />
+        <br />
+        <p>Drag file over to upload</p>
+      </Upload>
+    </div>
+    </div>
   )
 }
