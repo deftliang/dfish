@@ -11,6 +11,7 @@ interface BaseButtonProps {
   btnType?: ButtonType
   children?: React.ReactNode
   href?: string,
+  backgroundColor?: string
 }
 type NativeButtonProps = BaseButtonProps & React.ButtonHTMLAttributes<HTMLElement>
 type AnchorButtonProps = BaseButtonProps & React.AnchorHTMLAttributes<HTMLElement>
@@ -23,10 +24,11 @@ const Button: React.FC<ButtonProps> = (props) => {
     size,
     children,
     href,
+    backgroundColor,
     ...restProps
   } = props
   const classes = classNames('btn', className, {
-    [`btn-${btnType}`]: btnType,
+    [`btn-${btnType}`]: btnType && !backgroundColor,
     [`btn-${size}`]: size,
     'disabled': (btnType === 'link') && disabled
   })
@@ -45,6 +47,7 @@ const Button: React.FC<ButtonProps> = (props) => {
       <button
         className={classes}
         disabled={disabled}
+        style={{backgroundColor}}
         {...restProps}
       >
         {children}

@@ -5,7 +5,9 @@ import { action } from '@storybook/addon-actions'
 
 export default {
   title: 'Components/AutoComplete',
-  decorators:  [(Story) => <div style={{ height: '700px' }}><Story/></div>]
+  decorators:  [(Story) => (<div style={{ height: '700px' }}><Story/>
+  <p>在输入框输入 github name 内容搜索 github 地址</p>
+  </div>)]
 } as Meta
 
 // interface LakerPlayerProps {

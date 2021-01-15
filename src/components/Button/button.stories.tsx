@@ -10,11 +10,13 @@ export default {
   argTypes: {
     children: {
       description: 'change the button content',
+      defaultValue: { summary: 'button' },
       control: {
         type: 'text'
       }
     },
     size: {
+      defaultValue: { summary: 'ls' },
       description: 'change the button size',
       control: {
         type: 'select',
@@ -22,6 +24,7 @@ export default {
       }
     },
     btnType: {
+      defaultValue: { summary: 'default' },
       description: 'change the button button type',
       control: {
         type: 'select',
@@ -32,13 +35,11 @@ export default {
       description: 'click the button to trigger event',
       action: 'clicked'
     },
-    disabled: {
-      description: 'disable the button',
+    backgroundColor: {
+      description: 'chagne the button backgroud color',
       control: {
-        type: 'select',
-        options: [false,true]
+        type: 'color'
       },
-      default: false
     },
   }
 } as Meta
@@ -47,22 +48,23 @@ const Template: Story<ButtonProps> = (args) => <div style={{ margin: '3em' }}><B
 
 export const defaultButton = Template.bind({});
 defaultButton.args = {
-  children: ' default button ',
+  children: 'custom button ',
   btnType: 'default',
   onClick: action('clicked'),
+  disabled: false
 }
 
-// export const buttonWithSize = () => (
-//   <>
-//     <Button size="lg" onClick={action('clicked')}> large button </Button>
-//     <Button size="sm" onClick={action('clicked')}> small button </Button>
-//   </>
-// )
+export const buttonWithSize = () => (
+  <>
+    <Button size="lg" onClick={action('clicked')}> large button </Button>
+    <Button size="sm" onClick={action('clicked')}> small button </Button>
+  </>
+)
 
-// export const buttonWithType = () => (
-//   <>
-//     <Button btnType="primary"  onClick={action('clicked')}> primary button </Button>
-//     <Button btnType="danger"  onClick={action('clicked')}> danger button </Button>
-//     <Button btnType="link" href="https://baidu.com"  onClick={action('clicked')}> link button </Button>
-//   </>
-// )
+export const buttonWithType = () => (
+  <>
+    <Button btnType="primary"  onClick={action('clicked')}> primary button </Button>
+    <Button btnType="danger"  onClick={action('clicked')}> danger button </Button>
+    <Button btnType="link" href="https://baidu.com"  onClick={action('clicked')}> link button </Button>
+  </>
+)

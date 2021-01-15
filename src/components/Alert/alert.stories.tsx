@@ -2,14 +2,21 @@ import React from 'react'
 import { Meta, Story } from '@storybook/react/types-6-0'
 import Alert, { AlertProps } from './alert'
 
-
 export default {
   title: 'Components/Alert',
   component: Alert,
-  decorators:  [(Story) => <div style={{ margin: '3em' }}><Story/></div>]
+  argTypes: {
+    alertType: {
+      description: 'change the alert type',
+      control: {
+        type: 'select',
+        options: ['success', 'default', 'danger', 'warning']
+      }
+    }
+  }
 } as Meta
 
-const Templete: Story<AlertProps> = (args) => <Alert {...args} />
+const Templete: Story<AlertProps> = (args) => <div style={{ margin: '3em' }}><Alert {...args} /></div>
 
 export const defaultAlert = Templete.bind({})
 defaultAlert.args = {
