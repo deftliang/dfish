@@ -31,7 +31,7 @@ export default {
     append: {
       type: null
     }
-  }
+  },
 } as Meta
 
 const Templete: Story<InputProps> = (args) => <div style={{ margin: '3em' }}><Input {...args} /></div>
@@ -39,7 +39,7 @@ const Templete: Story<InputProps> = (args) => <div style={{ margin: '3em' }}><In
 export const simpleInput = Templete.bind({})
 simpleInput.args = {
   placeholder: 'I am Input Component',
-  disabled: false
+  disabled: false,
 }
 
 export const InputWithSize = () => {
