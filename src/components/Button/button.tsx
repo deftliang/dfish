@@ -10,7 +10,7 @@ interface BaseButtonProps {
   size?: ButtonSize
   btnType?: ButtonType
   children?: React.ReactNode
-  href?: string
+  href?: string,
 }
 type NativeButtonProps = BaseButtonProps & React.ButtonHTMLAttributes<HTMLElement>
 type AnchorButtonProps = BaseButtonProps & React.AnchorHTMLAttributes<HTMLElement>

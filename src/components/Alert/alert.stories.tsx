@@ -5,7 +5,8 @@ import Alert, { AlertProps } from './alert'
 
 export default {
   title: 'Components/Alert',
-  component: Alert
+  component: Alert,
+  decorators:  [(Story) => <div style={{ margin: '3em' }}><Story/></div>]
 } as Meta
 
 const Templete: Story<AlertProps> = (args) => <Alert {...args} />

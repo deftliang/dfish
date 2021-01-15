@@ -4,7 +4,8 @@ import { AutoComplete, DataSourceType } from './autoComplete'
 import { action } from '@storybook/addon-actions'
 
 export default {
-  title: 'Components/AutoComplete'
+  title: 'Components/AutoComplete',
+  decorators:  [(Story) => <div style={{ height: '700px' }}><Story/></div>]
 } as Meta
 
 // interface LakerPlayerProps {

@@ -4,6 +4,10 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 
 library.add(fas)
 
+// export const parameters = {
+//   actions: { argTypesRegex: "^on[A-Z].*" },
+// }
+
 export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
-}
+  controls: { expanded: true },
+};
