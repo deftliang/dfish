@@ -41,7 +41,7 @@
     "test:nowatch": "cross-env CI=true react-scripts test ",
     "eject": "react-scripts eject",
     "build-ts": "tsc -p tsconfig.build.json",
-    "build-css": "node-sass ./src/styles/index.scss ./dist/index.css",
+    "build-css": "dart-sass ./src/styles/index.scss ./dist/index.css",
     "sb": "start-storybook -p 6006 -s public",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
